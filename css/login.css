@@ -1,0 +1,17 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content:center;
+    background-color: black;
+    color:aliceblue;
+}
+
+.login_header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+

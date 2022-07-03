@@ -15,9 +15,8 @@
     margin-bottom: 50px;
 }
 
-
-.login.header img {
-    width: 100%;  
+.login_header img {
+    width: 300px;  
 }
 
 .login_header h1 {

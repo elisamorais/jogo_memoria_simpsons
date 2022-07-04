@@ -1,0 +1,92 @@
+const grid = document.querySelector('.grid');
+
+const characters= ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10',];
+
+
+const CreateElement = (tag, className) => {
+    const element = document.createElement(tag);
+    element.className = className;
+    return element;
+}
+
+let firstCard = '';
+let secondCard = '';
+
+const checkEndGame = () => {
+    const disableCards = document.querySelectorAll('.disabled-card');
+
+    if(disableCards.length === 20) {
+        alert('Parabéns, você conseguiu!');
+    }
+}
+
+const checkCards = () => {
+    const firstCharacter = firstCard.getAttribute('data-character');
+    const secondCharacter = secondCard.getAttribute('data-character');
+
+    if (firstCharacter === secondCharacter) {
+        firstCard.firstChild.classList.add('disabled-card');
+        secondCard.firstChild.classList.add('disabled-card');
+
+        firstCard = '';
+        secondCard = '';
+
+        checkEndGame (); 
+
+    } else {
+        setTimeout(() => { 
+            firstCard.classList.remove('reveal-card');
+            secondCard.classList.remove('reveal-card');
+
+            firstCard = '';
+            secondCard = '';
+
+        }, 500);
+    }
+}
+
+const revealCard = ({ target }) => {
+    if (target.parentNode.className.includes('reveal-card')) {
+        return;
+    }
+
+    if (firstCard === '') {
+        target.parentNode.classList.add('reveal-card');
+        firstCard = target.parentNode;
+    } else if (secondCard === '') {
+        target.parentNode.classList.add('reveal-card');
+        secondCard = target.parentNode;
+
+        checkCards();
+
+    }
+}
+
+const createCard = (character) => {
+
+    const card = createElement('div', 'card');
+    const front = createElement('div', 'face front');
+    const back = createElement('div', 'face back');
+
+    front.syle.backgroundImage = `url('../imagens/${character}.png')`;
+
+    card.appendChild(front);
+    card.appendChild(back);
+
+    card.appendChild(front);
+    card.appendChild(back);
+
+    grid.appendChild(card);
+
+    return card;
+}
+
+const loadGame = () => {
+    characters.forEach((character) => {
+        const card = createCard(character);
+        grid.appendChild(Card);
+
+    });
+}
+
+loadGame();

@@ -23,13 +23,11 @@
     position: absolute;
     background-size: cover;
     background-position: center;
-    border: 2px solid orange;
+    border: 2px solid blue;
 
 }
 
 .front {
-
-    background-image: url(../imagens/01.png);
     transform: rotateY(180deg);
 }
 

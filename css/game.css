@@ -70,3 +70,9 @@ header {
     filter: saturate(0);
     opacity: 0.5;
 }
+
+.copyright {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: x-small;
+}

@@ -53,3 +53,9 @@
    color: #aaa;
    cursor: auto;
 }
+
+.copyright {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: x-small;
+}

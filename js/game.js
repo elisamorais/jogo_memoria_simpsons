@@ -1,9 +1,9 @@
 const grid = document.querySelector('.grid');
 
-const characters= ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10',];
+const characters = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10',];
 
 
-const CreateElement = (tag, className) => {
+const createElement = (tag, className) => {
     const element = document.createElement(tag);
     element.className = className;
     return element;
@@ -13,9 +13,9 @@ let firstCard = '';
 let secondCard = '';
 
 const checkEndGame = () => {
-    const disableCards = document.querySelectorAll('.disabled-card');
+    const disabledCards = document.querySelectorAll('.disabled-card');
 
-    if(disableCards.length === 20) {
+    if(disabledCards.length === 20) {
         alert('Parabéns, você conseguiu!');
     }
 }
@@ -54,6 +54,7 @@ const revealCard = ({ target }) => {
         target.parentNode.classList.add('reveal-card');
         firstCard = target.parentNode;
     } else if (secondCard === '') {
+
         target.parentNode.classList.add('reveal-card');
         secondCard = target.parentNode;
 
@@ -68,23 +69,25 @@ const createCard = (character) => {
     const front = createElement('div', 'face front');
     const back = createElement('div', 'face back');
 
-    front.syle.backgroundImage = `url('../imagens/${character}.png')`;
+    front.style.backgroundImage = `url('../imagens/${character}.png')`;
 
     card.appendChild(front);
     card.appendChild(back);
 
-    card.appendChild(front);
-    card.appendChild(back);
-
-    grid.appendChild(card);
+    card.addEventListener('click', revealCard);
+    card.setAttribute('data-character', character);
 
     return card;
 }
 
 const loadGame = () => {
-    characters.forEach((character) => {
+    const duplicateCharacters = [ ...characters, ...characters ];
+
+    const shuffledArray = duplicateCharacters.sort(() => Math.random() -0.5);
+
+    shuffledArray.forEach((character) => {
         const card = createCard(character);
-        grid.appendChild(Card);
+        grid.appendChild(card);
 
     });
 }

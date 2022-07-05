@@ -1,7 +1,19 @@
 const grid = document.querySelector('.grid');
+const spanPlayer = document.querySelector('.player');
+const timer = document.querySelector('.timer');
 
-const characters = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10',];
-
+const characters = [
+    '01', 
+    '02', 
+    '03', 
+    '04', 
+    '05', 
+    '06', 
+    '07', 
+    '08', 
+    '09', 
+    '10',
+];
 
 const createElement = (tag, className) => {
     const element = document.createElement(tag);
@@ -16,7 +28,8 @@ const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
 
     if(disabledCards.length === 20) {
-        alert('Parabéns, você conseguiu!');
+        clearInterval(this.loop);
+        alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi: ${timer.innerHTML}`);
     }
 }
 
@@ -35,6 +48,7 @@ const checkCards = () => {
 
     } else {
         setTimeout(() => { 
+            
             firstCard.classList.remove('reveal-card');
             secondCard.classList.remove('reveal-card');
 
@@ -43,16 +57,20 @@ const checkCards = () => {
 
         }, 500);
     }
+
 }
 
 const revealCard = ({ target }) => {
+    
     if (target.parentNode.className.includes('reveal-card')) {
         return;
     }
 
     if (firstCard === '') {
+        
         target.parentNode.classList.add('reveal-card');
         firstCard = target.parentNode;
+    
     } else if (secondCard === '') {
 
         target.parentNode.classList.add('reveal-card');
@@ -92,4 +110,19 @@ const loadGame = () => {
     });
 }
 
-loadGame();
+const startTimer = () => {
+
+    this.loop = setInterval(() => {
+        const currentTime = +timer.innerHTML;
+        timer.innerHTML = currentTime + 1;
+    }, 1000);
+}
+
+window.onload = () => {
+    spanPlayer.innerHTML = localStorage.getItem('player');
+    startTimer();
+    loadGame();
+
+}
+
+

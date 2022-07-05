@@ -3,7 +3,7 @@ const button = document.querySelector('.login_button');
 const form = document.querySelector('.login-form');
 
 const validateInput = ({ target }) => {
-    if (target.value.length >2) {
+    if (target.value.length > 2) {
         button.removeAttribute('disabled');
         return;
     } 
@@ -14,7 +14,7 @@ const validateInput = ({ target }) => {
         event.preventDefault();
 
         localStorage.setItem('player', input.value);
-        window.location = 'pages/game.html';
+        window.location = './pages/game.html';
     }
 
 

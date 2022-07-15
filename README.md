@@ -4,7 +4,7 @@
 Este é um jogo da memória com os personagens de The Simpsons. É um jogo lúdico e também serve como um bom treino para o cérebro, 
 uma vez que você deve memorizar as cartas com os personagens iguais. 🃏🃏
 
-As tecnologias utilizadas para desenvolver este jogo foram: **JavaScript**, **HTLM** e **CSS**.
+As tecnologias utilizadas para desenvolver este jogo foram: **JavaScript**, **HTML** e **CSS**.
 
 ### Link para o jogo: 
 https://elisamorais.github.io/jogo_memoria_simpsons/

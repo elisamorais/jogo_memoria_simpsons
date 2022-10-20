@@ -1,3 +1,11 @@
+| 🪧 Vitrine.Dev    |  |
+| ----------- | ----------- |
+| ✨ Nome     | Memory Game|
+| 🏷️ Tecnologias   | JavaScript, HTML, CSS |
+| 🚀 URL   | https://elisamorais.github.io/jogo_memoria_simpsons/ |
+| 🔥 Desafio   | Estudos JavaScript |
+
+
 # Memory Game
 
 
@@ -15,4 +23,4 @@ https://elisamorais.github.io/jogo_memoria_simpsons/
 
 **Tela com as cartas**
 
-![image](https://user-images.githubusercontent.com/87885921/177413845-dc6ed6e0-ee4f-4e52-af44-f93d7d75a823.png)
+![image](https://user-images.githubusercontent.com/87885921/177413845-dc6ed6e0-ee4f-4e52-af44-f93d7d75a823.png)#vitrinedev
